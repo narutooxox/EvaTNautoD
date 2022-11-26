@@ -72,3 +72,7 @@ CAPTION_BUTTON = environ.get("CAPTION_BUTTON", "Support ⚡")
 CAPTION_BUTTON_URL = environ.get("CAPTION_BUTTON_URL", "https://www.google.com/")
 
 YOUR_CHANNEL = environ.get("YOUR_CHANNEL", "https://www.google.com/")
+AUTO_DELETE_TIME = int(environ.get('AUTO_DELETE_TIME', 300))
+AUTO_DELETE = environ.get('AUTO_DELETE', False)
+if AUTO_DELETE == "True":
+    AUTO_DELETE = True
