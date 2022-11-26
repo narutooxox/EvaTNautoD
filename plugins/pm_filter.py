@@ -833,6 +833,9 @@ async def manual_filters(client, message, text=False):
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
+                    if AUTO_DELETE:
+                        await asyncio.sleep(AUTO_DELETE_TIME)
+                        await txt.delete()
                 except Exception as e:
                     logger.exception(e)
                 break
