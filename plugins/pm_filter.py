@@ -36,6 +36,9 @@ async def give_filter(client, message):
     if k == False:
         await auto_filter(client, message)
 
+    if AUTO_DELETE:
+        await message.delete()
+
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
